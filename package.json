@@ -4,17 +4,33 @@
     "dev": "nuxi dev",
     "build": "nuxi build",
     "start": "node .output/server/index.mjs",
-    "lint": "eslint \"**/*.{vue,ts,js}\"",
-    "format": "prettier .  --write"
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
+    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint --cache",
+    "*.{css,scss,sass,html,vue}": "stylelint",
+    "*.**": "prettier --check --ignore-unknown"
   },
   "devDependencies": {
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^10.0.0",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.7",
     "nuxt3": "latest",
+    "postcss-html": "^1.3.0",
     "prettier": "^2.5.1",
     "sass": "^1.45.1",
+    "stylelint": "^14.2.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-vue": "^1.1.0",
+    "stylelint-config-standard": "^24.0.0",
     "typescript": "^4.5.4",
     "vite-plugin-eslint": "^1.3.0"
   }
