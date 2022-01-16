@@ -1,29 +1,10 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Starter
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+## ToDo
 
-## Setup
-
-Make sure to install the dependencies
-
-```bash
-yarn install
-```
-
-## Development
-
-Start the development server on http://localhost:3000
-
-```bash
-yarn dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-yarn build
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+- [x] TypeScript
+- [x] ESLint, StyleLint, Prettier, Lint on git check in
+- [] ESLint Plugin for Nuxt - Lint error to console (Vite-ESLint-Plugin does not work, Nuxt ESLint Plugin does not support Nuxt3 yet)
+- [] Pinia State management
+- [] Authentication/Authorisation (for route)
+- [] PWA support
