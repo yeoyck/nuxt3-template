@@ -1,8 +1,7 @@
 {
-    "endOfLine": "auto",
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 150,
-    "trailingComma": "none"
-  }
-  
+  "endOfLine": "auto",
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 150,
+  "trailingComma": "none"
+}

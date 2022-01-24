@@ -3,34 +3,47 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .output/server/index.mjs",
-    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "start": "cross-env node .output/server/index.mjs",
+    "prepare": "husky install",
+    "typecheck": "nuxi typecheck",
+    "lint:js": "eslint --ext \".js,.vue,.ts\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
     "lint:prettier": "prettier --check .",
-    "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
-    "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
-    "prepare": "husky install"
+    "lint": "pnpm lint:js && pnpm lint:style && pnpm lint:prettier",
+    "lintfix": "prettier --write --list-different . && pnpm lint:js --fix && pnpm lint:style --fix"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --cache",
     "*.{css,scss,sass,html,vue}": "stylelint",
     "*.**": "prettier --check --ignore-unknown"
   },
+  "dependencies": {
+    "pinia": "^2.0.9"
+  },
   "devDependencies": {
+    "@pinia/nuxt": "^0.1.8",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^10.0.0",
-    "eslint": "^8.5.0",
-    "eslint-plugin-vue": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.7.0",
+    "eslint-plugin-vue": "^8.3.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.1.7",
-    "nuxt3": "^3.0.0-27369360.33ebb01",
+    "lint-staged": "^12.3.1",
+    "nuxt3": "latest",
     "postcss-html": "^1.3.0",
     "prettier": "^2.5.1",
-    "sass": "^1.45.1",
-    "stylelint": "^14.2.0",
+    "sass": "^1.49.0",
+    "stylelint": "^14.3.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended-vue": "^1.1.0",
     "stylelint-config-standard": "^24.0.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5",
+    "vue-tsc": "^0.31.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
+      "@nuxt/kit-edge": "latest"
+    }
   }
 }
