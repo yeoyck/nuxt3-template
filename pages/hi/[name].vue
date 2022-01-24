@@ -42,6 +42,7 @@ const doReset = () => {
   user.$patch({
     previousNames: []
   })
+  // OR
   // user.previousNames = []
 }
 </script>

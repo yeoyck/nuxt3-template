@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   meta: {
     title: 'My App'
   },
-  buildModules: ['@pinia/nuxt'],
+  buildModules: ['@vueuse/nuxt', '@pinia/nuxt'],
   typescript: {
     strict: true
   },
