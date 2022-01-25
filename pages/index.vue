@@ -8,16 +8,11 @@
       <h3>Vue 3 Composition API Test ({{ componentEmit }})</h3>
       <TestComposition test="tester" @change="handleChange"></TestComposition>
     </div>
-    <!-- <div>
-      <h3>Vue 3 Suspense</h3>
-      <div v-if="error">{{ error }}</div>
-      <Suspense v-else>
-        <template #default> <TestSuspense></TestSuspense> </template>
-        <template #fallback>
-          <h1>Loading...</h1>
-        </template>
-      </Suspense>
-    </div> -->
+    <div>
+      <h3>Nuxt Server Async Loader</h3>
+      <ServerBlock></ServerBlock>
+      <ServerNoBlock></ServerNoBlock>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -36,10 +31,4 @@ const componentEmit = ref(0)
 const handleChange = (val: number) => {
   componentEmit.value = val
 }
-
-// Suspense testing
-// const error = ref<string | null>(null)
-// onErrorCaptured(() => {
-//   error.value = 'Something went wrong'
-// })
 </script>
