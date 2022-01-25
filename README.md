@@ -12,8 +12,6 @@ This template is based [Vitesse](https://github.com/antfu/vitesse).
 
 - 📥 APIs auto importing - for Composition API, VueUse and custom composables.
 
-- 🏎 Zero-config cloud functions and deploy
-
 - 🦾 TypeScript, of course
 
 - Ꮥ [SCSS/SASS](https://github.com/sass/sass)
